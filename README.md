@@ -113,7 +113,7 @@ docker compose up -d --build
 ```bash
 # 1) Подготовить данные для demo
 docker compose exec -T db psql -U postgres -d marketplace -f /sql/01_prepare_demo_order.sql
-
+docker compose exec -T db psql -U postgres -d marketplace -c 'SELECT * FROM orders;'
 # 2) Реализовать кэш и demo endpoints
 # backend/app/api/cache_demo_routes.py
 # backend/app/application/cache_service.py
